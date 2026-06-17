@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Plugin">
+      <UniqueIdentifier>{b5a0f310-5b31-40dc-b664-f4968f99a332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qt">
+      <UniqueIdentifier>{8c3ddab7-2ae7-4a2a-b1b0-01421891e391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Dialog">
+      <UniqueIdentifier>{ae856420-686f-4e4f-9a57-5c620f09c070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Dock">
+      <UniqueIdentifier>{cf8f40a9-de48-4b00-82f2-b1476ccf21fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Menu">
+      <UniqueIdentifier>{2aa316fb-85ad-4829-8ab6-d435e91c80a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mocks">
+      <UniqueIdentifier>{331ac6b6-9698-4578-b5d9-2a4afa9b73b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{ed2b911a-f1c0-4254-bcd5-e306a79bc601}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="QT\QAbstractButtonShimTest.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QActionShimTest.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QDockWidgetShimTest.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QGroupBoxShimTest.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QIconUtilsTest.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QLabelShimTest.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QMessageBoxShimTest.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QWidgetShimTest.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Menu\ToolsMenuShimTest.cpp">
+      <Filter>Plugin\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dock\DockHeaderWidgetTest.cpp">
+      <Filter>Plugin\Dock</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dock\DockShimTest.cpp">
+      <Filter>Plugin\Dock</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dock\DockWrapperWidgetTest.cpp">
+      <Filter>Plugin\Dock</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dock\FrameMonitorDockWidgetTest.cpp">
+      <Filter>Plugin\Dock</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dock\ToolbarWidgetTest.cpp">
+      <Filter>Plugin\Dock</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dialog\PluginSettingsSyncTest.cpp">
+      <Filter>Plugin\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\FlowLayoutTest.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="Mocks\MockObsFrontend.cpp">
+      <Filter>Mocks</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Mocks\MockObsFrontend.h">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\QtTestHelpers.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

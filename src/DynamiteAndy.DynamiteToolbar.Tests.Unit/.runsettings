@@ -1,0 +1,13 @@
+<Configuration>
+  <CodeCoverage>
+    <ModulePaths>
+      <Include>
+        <ModulePath>.*[/\\]dynamiteandy\.dynamite-toolbar\.dll</ModulePath>
+      </Include>
+      <Exclude>
+        <ModulePath>.*[/\\]DynamiteAndy\.DynamiteToolbar\.Tests\.Unit\.dll</ModulePath>
+        <ModulePath>.*[/\\]NetObsBindings\.dll</ModulePath>
+      </Exclude>
+    </ModulePaths>
+  </CodeCoverage>
+</Configuration>

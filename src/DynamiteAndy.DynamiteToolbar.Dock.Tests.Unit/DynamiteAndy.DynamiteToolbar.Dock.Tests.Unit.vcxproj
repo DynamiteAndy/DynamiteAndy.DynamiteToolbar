@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{178CBEFD-C472-428E-8CF4-E3538FFF7B52}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>6.8.3_msvc2022_64</QtInstall>
+    <QtModules>core;gui;widgets;testlib</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>6.8.3_msvc2022_64</QtInstall>
+    <QtModules>core;gui;widgets;testlib</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <!-- Dependency roots: same .deps folder populated by cmake configure -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(MSBuildProjectDirectory)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(MSBuildProjectDirectory)\obj\$(Platform)\$(Configuration)\</IntDir>
+    <QtLocalInstallLib>$(QTDIR)\lib</QtLocalInstallLib>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(MSBuildProjectDirectory)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(MSBuildProjectDirectory)\obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Label="DependencyRoots">
+    <DepsDir Condition="'$(DepsDir)'==''">$(SolutionDir).deps</DepsDir>
+    <QtDepsDir Condition="'$(QtDepsDir)'==''">$(DepsDir)\obs-deps-qt6-2025-08-23-x64</QtDepsDir>
+    <ObsInstallDir Condition="'$(ObsInstallDir)'==''">$(DepsDir)</ObsInstallDir>
+    <GTestDir Condition="'$(GTestDir)'==''">$(DepsDir)\googletest-1.17.0</GTestDir>
+  </PropertyGroup>
+  <PropertyGroup Label="DependencyPaths">
+    <QtInclude>$(QtDepsDir)\include</QtInclude>
+    <QtLib>$(QtDepsDir)\lib</QtLib>
+    <ObsInclude>$(ObsInstallDir)\include</ObsInclude>
+    <ObsLib>$(ObsInstallDir)\lib</ObsLib>
+    <DockSrcDir>$(SolutionDir)src\DynamiteAndy.DynamiteToolbar.Dock</DockSrcDir>
+    <GTestInclude>$(GTestDir)\googletest\include</GTestInclude>
+    <GMockInclude>$(GTestDir)\googlemock\include</GMockInclude>
+    <GTestLib>$(GTestDir)\build\lib\$(Configuration)</GTestLib>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(DockSrcDir);$(QtInclude);$(QtInclude)\QtCore;$(QtInclude)\QtGui;$(QtInclude)\QtWidgets;$(QtInclude)\QtTest;$(GTestInclude);$(GMockInclude);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(QtLocalInstallLib);$(QtLib);$(ObsLib);$(GTestLib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt6Cored.lib;Qt6Guid.lib;Qt6Widgetsd.lib;Qt6Testd.lib;obs.lib;obs-frontend-api.lib;gtestd.lib;gtest_maind.lib;gmockd.lib;gmock_maind.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(DockSrcDir);$(QtInclude);$(QtInclude)\QtCore;$(QtInclude)\QtGui;$(QtInclude)\QtWidgets;$(QtInclude)\QtTest;$(GTestInclude);$(GMockInclude);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(QtLib);$(ObsLib);$(GTestLib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt6Core.lib;Qt6Gui.lib;Qt6Widgets.lib;Qt6Test.lib;obs.lib;obs-frontend-api.lib;gtest.lib;gtest_main.lib;gmock.lib;gmock_main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamiteAndy.DynamiteToolbar.Dock\DynamiteAndy.DynamiteToolbar.Dock.vcxproj">
+      <Project>{683c3453-0fa1-4fb9-bde4-e2c5dc57fc96}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Mocks\MockObsFrontend.cpp" />
+    <ClCompile Include="Plugin\Dialog\PluginSettingsSyncTest.cpp" />
+    <ClCompile Include="Plugin\Dock\DockHeaderWidgetTest.cpp" />
+    <ClCompile Include="Plugin\Dock\DockShimTest.cpp" />
+    <ClCompile Include="Plugin\Dock\DockWrapperWidgetTest.cpp" />
+    <ClCompile Include="Plugin\Dock\FrameMonitorDockWidgetTest.cpp" />
+    <ClCompile Include="Plugin\Dock\ToolbarWidgetTest.cpp" />
+    <ClCompile Include="Plugin\FlowLayoutTest.cpp" />
+    <ClCompile Include="Plugin\Menu\ToolsMenuShimTest.cpp" />
+    <ClCompile Include="QT\QAbstractButtonShimTest.cpp" />
+    <ClCompile Include="QT\QActionShimTest.cpp" />
+    <ClCompile Include="QT\QDockWidgetShimTest.cpp" />
+    <ClCompile Include="QT\QGroupBoxShimTest.cpp" />
+    <ClCompile Include="QT\QIconUtilsTest.cpp" />
+    <ClCompile Include="QT\QLabelShimTest.cpp" />
+    <ClCompile Include="QT\QMessageBoxShimTest.cpp" />
+    <ClCompile Include="QT\QWidgetShimTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Helpers\QtTestHelpers.h" />
+    <ClInclude Include="Mocks\MockObsFrontend.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

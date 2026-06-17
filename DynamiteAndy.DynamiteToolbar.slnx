@@ -1,0 +1,17 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Tests/">
+    <Project Path="src/DynamiteAndy.DynamiteToolbar.Dock.Tests.Unit/DynamiteAndy.DynamiteToolbar.Dock.Tests.Unit.vcxproj" Id="178cbefd-c472-428e-8cf4-e3538fff7b52">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="src/DynamiteAndy.DynamiteToolbar.Tests.Unit/DynamiteAndy.DynamiteToolbar.Tests.Unit.csproj" />
+  </Folder>
+  <Project Path="src/DynamiteAndy.DynamiteToolbar.Dock/DynamiteAndy.DynamiteToolbar.Dock.vcxproj" Id="683c3453-0fa1-4fb9-bde4-e2c5dc57fc96" />
+  <Project Path="src/DynamiteAndy.DynamiteToolbar/DynamiteAndy.DynamiteToolbar.csproj">
+    <BuildDependency Project="src/DynamiteAndy.DynamiteToolbar.Dock/DynamiteAndy.DynamiteToolbar.Dock.vcxproj" />
+  </Project>
+</Solution>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copy this file to DynamiteAndy.DynamiteToolbar.Dock.vcxproj.user
+  and update if your .deps folder is in a non-standard location.
+
+  The defaults in the vcxproj already point at $(SolutionDir).deps
+  which is where CMake puts everything when you run cmake configure
+  from the repo root.  You only need this file if that path is wrong.
+
+  IMPORTANT: run CMake configure at least once before building via
+  the sln so that .deps is populated:
+
+    cmake -S . -B build -A x64
+
+  That downloads and builds obs-studio + Qt6 into .deps automatically.
+-->
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!--
+      Override DepsDir if you have moved .deps somewhere else, e.g.:
+        <DepsDir>D:\obs-deps</DepsDir>
+
+      Everything else (QtDepsDir, ObsInstallDir) is derived from
+      DepsDir automatically – you only need to set those individually
+      if your layout is unusual.
+    -->
+    <!-- <DepsDir>$(SolutionDir).deps</DepsDir> -->
+  </PropertyGroup>
+</Project>

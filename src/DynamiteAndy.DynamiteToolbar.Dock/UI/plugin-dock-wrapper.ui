@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui version="4.0">
+ <class>DockWrapper</class>
+ <widget class="QDockWidget" name="dockWrapper">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>51</width>
+    <height>34</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="allowedAreas">
+   <set>Qt::DockWidgetArea::BottomDockWidgetArea|Qt::DockWidgetArea::TopDockWidgetArea</set>
+  </property>
+  <property name="windowTitle">
+   <string>Dynamite Toolbar</string>
+  </property>
+  <widget class="ToolbarWidget" name="toolbar" />
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ToolbarWidget</class>
+   <extends>QWidget</extends>
+   <header>Plugin/Dock/ToolbarWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources />
+ <connections />
+</ui>

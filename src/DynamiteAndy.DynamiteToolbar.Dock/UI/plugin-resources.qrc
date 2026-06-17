@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="/dynamite-toolbar/res">
+    <file>images/float.svg</file>
+    <file>images/replay-buffer.svg</file>
+    <file>images/video.svg</file>
+    <file>images/recording.svg</file>
+    <file>images/paused.svg</file>
+  </qresource>
+</RCC>

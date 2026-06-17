@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>QtVS_v304</Keyword>
+    <ProjectGuid>{683c3453-0fa1-4fb9-bde4-e2c5dc57fc96}</ProjectGuid>
+    <RootNamespace>DynamiteAndyDynamiteToolbarDock</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <!-- Qt modules: core + gui + widgets + svg + uic/moc/rcc tooling -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="QtSettings">
+    <QtInstall>6.8.3_msvc2022_64</QtInstall>
+    <QtModules>core;gui;widgets;svg</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="QtSettings">
+    <QtInstall>6.8.3_msvc2022_64</QtInstall>
+    <QtModules>core;gui;widgets;svg</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <!-- Dependency roots: defaults match the .deps folder cmake populates on first configure. -->
+  <!-- Run: cmake -S . -B build -A x64  once before building via the sln. -->
+  <!-- Override DepsDir in your .vcxproj.user file if .deps is elsewhere. -->
+  <PropertyGroup Label="DependencyRoots">
+    <!-- Root of the .deps tree created by cmake configure -->
+    <DepsDir Condition="'$(DepsDir)'==''">$(SolutionDir).deps</DepsDir>
+    <!-- Qt6 archive is extracted to obs-deps-qt6-VERSION-x64 inside .deps -->
+    <QtDepsDir Condition="'$(QtDepsDir)'==''">$(DepsDir)\obs-deps-qt6-2025-08-23-x64</QtDepsDir>
+    <!-- OBS headers and libs are cmake-installed directly into .deps root -->
+    <ObsInstallDir Condition="'$(ObsInstallDir)'==''">$(DepsDir)</ObsInstallDir>
+  </PropertyGroup>
+  <!-- Computed paths - do not edit below this line -->
+  <PropertyGroup Label="DependencyPaths">
+    <QtInclude>$(QtDepsDir)\include</QtInclude>
+    <QtLib>$(QtDepsDir)\lib</QtLib>
+    <ObsInclude>$(ObsInstallDir)\include</ObsInclude>
+    <ObsLib>$(ObsInstallDir)\lib</ObsLib>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtBuildSuffix>d</QtBuildSuffix>
+    <OutDir>$(MSBuildProjectDirectory)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(MSBuildProjectDirectory)\obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtBuildSuffix>
+    </QtBuildSuffix>
+    <OutDir>$(MSBuildProjectDirectory)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(MSBuildProjectDirectory)\obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DYNAMITEANDYDYNAMITETOOLBARDOCK_EXPORTS;PROJECT_VERSION="1.0.0";_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(QtInclude);$(QtInclude)\QtCore;$(QtInclude)\QtGui;$(QtInclude)\QtWidgets;$(QtInclude)\QtSvg;$(ObsInclude);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(QtLib);$(ObsLib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt6Cored.lib;Qt6Guid.lib;Qt6Widgetsd.lib;Qt6Svgd.lib;obs.lib;obs-frontend-api.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;DYNAMITEANDYDYNAMITETOOLBARDOCK_EXPORTS;PROJECT_VERSION="1.0.0";_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(QtInclude);$(QtInclude)\QtCore;$(QtInclude)\QtGui;$(QtInclude)\QtWidgets;$(QtInclude)\QtSvg;$(ObsInclude);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(QtLib);$(ObsLib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt6Core.lib;Qt6Gui.lib;Qt6Widgets.lib;Qt6Svg.lib;obs.lib;obs-frontend-api.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;DYNAMITEANDYDYNAMITETOOLBARDOCK_EXPORTS;PROJECT_VERSION="1.0.0";_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(QtInclude);$(QtInclude)\QtCore;$(QtInclude)\QtGui;$(QtInclude)\QtWidgets;$(QtInclude)\QtSvg;$(ObsInclude);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(QtLib);$(ObsLib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt6Cored.lib;Qt6Guid.lib;Qt6Widgetsd.lib;Qt6Svgd.lib;obs.lib;obs-frontend-api.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;DYNAMITEANDYDYNAMITETOOLBARDOCK_EXPORTS;PROJECT_VERSION="1.0.0";_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(QtInclude);$(QtInclude)\QtCore;$(QtInclude)\QtGui;$(QtInclude)\QtWidgets;$(QtInclude)\QtSvg;$(ObsInclude);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(QtLib);$(ObsLib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt6Core.lib;Qt6Gui.lib;Qt6Widgets.lib;Qt6Svg.lib;obs.lib;obs-frontend-api.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="ModuleShim.h" />
+    <ClInclude Include="Plugin\Dialog\SettingsDialogShim.h" />
+    <QtMoc Include="Plugin\Dock\DockHeaderWidget.h" />
+    <ClInclude Include="Plugin\Dock\DockShim.h" />
+    <QtMoc Include="Plugin\Dock\DockWrapperWidget.h" />
+    <QtMoc Include="Plugin\Dock\FrameMonitorDockWidget.h" />
+    <QtMoc Include="Plugin\Dock\ToolbarWidget.h" />
+    <ClInclude Include="Plugin\FlowLayout.h" />
+    <ClInclude Include="Plugin\Menu\ToolsMenuShim.h" />
+    <ClInclude Include="Plugin\Types.h" />
+    <ClInclude Include="QT\QAbstractButtonShim.h" />
+    <ClInclude Include="QT\QActionShim.h" />
+    <ClInclude Include="QT\QDockWidgetShim.h" />
+    <ClInclude Include="QT\QGroupBoxShim.h" />
+    <ClInclude Include="QT\QIconUtils.h" />
+    <ClInclude Include="QT\QLabelShim.h" />
+    <ClInclude Include="QT\QMessageBoxShim.h" />
+    <ClInclude Include="QT\QObjectUtils.h" />
+    <ClInclude Include="QT\QThreadUtils.h" />
+    <ClInclude Include="QT\QWidgetShim.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="ModuleShim.cpp" />
+    <ClCompile Include="Plugin\Dialog\SettingsDialogShim.cpp" />
+    <ClCompile Include="Plugin\Dock\DockShim.cpp" />
+    <ClCompile Include="Plugin\Dock\DockWrapperWidget.cpp" />
+    <ClCompile Include="Plugin\Dock\FrameMonitorDockWidget.cpp" />
+    <ClCompile Include="Plugin\Dock\ToolbarWidget.cpp" />
+    <ClCompile Include="Plugin\FlowLayout.cpp" />
+    <ClCompile Include="Plugin\Menu\ToolsMenuShim.cpp" />
+    <ClCompile Include="QT\QAbstractButtonShim.cpp" />
+    <ClCompile Include="QT\QActionShim.cpp" />
+    <ClCompile Include="QT\QDockWidgetShim.cpp" />
+    <ClCompile Include="QT\QGroupBoxShim.cpp" />
+    <ClCompile Include="QT\QLabelShim.cpp" />
+    <ClCompile Include="QT\QMessageBoxShim.cpp" />
+    <ClCompile Include="QT\QWidgetShim.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="UI\plugin-dock-header.ui" />
+    <QtUic Include="UI\plugin-dock-wrapper.ui" />
+    <QtUic Include="UI\plugin-monitor-panel.ui" />
+    <QtUic Include="UI\plugin-settings-dialog.ui" />
+    <QtUic Include="UI\plugin-toolbar.ui" />
+    <QtRcc Include="UI\plugin-resources.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\images\float.svg" />
+    <None Include="UI\images\paused.svg" />
+    <None Include="UI\images\recording.svg" />
+    <None Include="UI\images\replay-buffer.svg" />
+    <None Include="UI\images\video.svg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

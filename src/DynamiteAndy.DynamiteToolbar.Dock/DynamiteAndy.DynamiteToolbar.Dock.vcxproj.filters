@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{e699d69d-1407-42bb-8c6c-d4205effe578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin">
+      <UniqueIdentifier>{6597e5c0-1f77-4731-b5da-a6c602a36053}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Menu">
+      <UniqueIdentifier>{81c3c28c-8a58-489f-988a-cb1abcaa75bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Dock">
+      <UniqueIdentifier>{e4d1172c-45bf-4065-9897-211fe091dcdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Dialog">
+      <UniqueIdentifier>{53a36c45-1b66-4a29-bf8c-13842ff358c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qt">
+      <UniqueIdentifier>{87c7cec7-bfed-401c-9b4e-2f301791f9d1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="QT\QWidgetShim.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="QT\QThreadUtils.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="QT\QObjectUtils.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="QT\QMessageBoxShim.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="QT\QLabelShim.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="QT\QIconUtils.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="QT\QGroupBoxShim.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="QT\QDockWidgetShim.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="QT\QActionShim.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="QT\QAbstractButtonShim.h">
+      <Filter>Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\FlowLayout.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\Types.h">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\Menu\ToolsMenuShim.h">
+      <Filter>Plugin\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\Dock\DockShim.h">
+      <Filter>Plugin\Dock</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\Dialog\SettingsDialogShim.h">
+      <Filter>Plugin\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleShim.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleShim.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QWidgetShim.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QMessageBoxShim.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QLabelShim.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QGroupBoxShim.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QDockWidgetShim.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QActionShim.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="QT\QAbstractButtonShim.cpp">
+      <Filter>Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\FlowLayout.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Menu\ToolsMenuShim.cpp">
+      <Filter>Plugin\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dock\DockShim.cpp">
+      <Filter>Plugin\Dock</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dock\DockWrapperWidget.cpp">
+      <Filter>Plugin\Dock</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dock\FrameMonitorDockWidget.cpp">
+      <Filter>Plugin\Dock</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dock\ToolbarWidget.cpp">
+      <Filter>Plugin\Dock</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\Dialog\SettingsDialogShim.cpp">
+      <Filter>Plugin\Dialog</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\images\float.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\images\paused.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\images\recording.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\images\replay-buffer.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\images\video.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Plugin\Dock\ToolbarWidget.h">
+      <Filter>Plugin\Dock</Filter>
+    </QtMoc>
+    <QtMoc Include="Plugin\Dock\FrameMonitorDockWidget.h">
+      <Filter>Plugin\Dock</Filter>
+    </QtMoc>
+    <QtMoc Include="Plugin\Dock\DockWrapperWidget.h">
+      <Filter>Plugin\Dock</Filter>
+    </QtMoc>
+    <QtMoc Include="Plugin\Dock\DockHeaderWidget.h">
+      <Filter>Plugin\Dock</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="UI\plugin-toolbar.ui">
+      <Filter>UI</Filter>
+    </QtUic>
+    <QtUic Include="UI\plugin-settings-dialog.ui">
+      <Filter>UI</Filter>
+    </QtUic>
+    <QtUic Include="UI\plugin-monitor-panel.ui">
+      <Filter>UI</Filter>
+    </QtUic>
+    <QtUic Include="UI\plugin-dock-wrapper.ui">
+      <Filter>UI</Filter>
+    </QtUic>
+    <QtUic Include="UI\plugin-dock-header.ui">
+      <Filter>UI</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="UI\plugin-resources.qrc">
+      <Filter>UI</Filter>
+    </QtRcc>
+  </ItemGroup>
+</Project>
