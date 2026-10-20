@@ -1,4 +1,11 @@
 # Dynamite Toolbar
+[![License: GPL v2](https://img.shields.io/github/license/DynamiteAndy/DynamiteAndy.DynamiteToolbar)](LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/DynamiteAndy/DynamiteAndy.DynamiteToolbar)](https://github.com/DynamiteAndy/DynamiteAndy.DynamiteToolbar/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/DynamiteAndy/DynamiteAndy.DynamiteToolbar/total)](https://github.com/DynamiteAndy/DynamiteAndy.DynamiteToolbar/releases)
+[![Build](https://github.com/DynamiteAndy/DynamiteAndy.DynamiteToolbar/actions/workflows/push.yaml/badge.svg?branch=master)](https://github.com/DynamiteAndy/DynamiteAndy.DynamiteToolbar/actions/workflows/push.yaml)
+![OBS Studio 32+](https://img.shields.io/badge/OBS%20Studio-32%2B-302E31)
+[![AI Assisted](https://www.aihonestybadge.com/badges/ai-assisted-small.svg)](https://www.aihonestybadge.com)
+
 ![Toolbar Preview](.assets/header-preview.png)
 ### This plugin makes it easy to access common OBS controls in a toolbar-like widget, without the need of the OBS Controls Dock!
 
